@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankita – A Timeless Story</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* ================= HERO ================= */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+            background-size: 500% 500%;
+            animation: gradientFlow 12s ease infinite;
+            color: #fff;
+            position: relative;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            animation: fadeDown 1.5s ease;
+        }
+
+        header p {
+            margin-top: 15px;
+            font-size: 1.4rem;
+            animation: fadeUp 1.5s ease;
+        }
+
+        .highlight-date {
+            margin-top: 30px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            font-weight: 600;
+            letter-spacing: 2px;
+            animation: pulse 2.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating decorative circles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-40px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .bubble:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            bottom: 15%;
+            left: 10%;
+        }
+
+        .bubble:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 30%;
+            animation-delay: 4s;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        /* ================= FRIENDS ================= */
+        .friends {
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            border-radius: 45px;
+            padding: 80px;
+
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .friends h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+        }
+
+        .friend-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+        }
+
+        .friend {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 35px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease;
+        }
+
+        .friend:hover {
+            transform: translateY(-18px) scale(1.03);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ================= GALLERY ================= */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.9s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.18) rotate(1deg);
+        }
+
+        .card span {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover span {
+            opacity: 1;
+        }
+
+        /* ================= VIDEO ================= */
+        .videos {
+            margin-top: 120px;
+            background: linear-gradient(135deg, #fddb92, #d1fdff);
+            padding: 90px;
+            border-radius: 50px;
+        }
+
+        .videos h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.7rem;
+            margin-bottom: 50px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .video-box {
+            background: #fff;
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .video-box:hover {
+            transform: scale(1.05);
+        }
+
+        .video-box video,
+        .video-box iframe {
+            width: 100%;
+            height: 220px;
+            border-radius: 20px;
+        }
+
+        /* ================= QUOTES ================= */
+        .quotes-section {
+            margin-top: 120px;
+            background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+            padding: 90px;
+            border-radius: 50px;
+        }
+
+        .quotes-section h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            margin-bottom: 50px;
+        }
+
+        .quotes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .quote-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 30px;
+            font-style: italic;
+            transition: all 0.4s ease;
+        }
+
+        .quote-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 120px;
+            padding: 45px;
+            text-align: center;
+            background: #111;
+            color: #ddd;
+        }
+
+        footer span {
+            color: #ff9a9e;
+            font-weight: 600;
+        }
+
+        /* ================= SCROLL ANIMATION ================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= GIFT SECTION ================= */
+        .gift-section {
+            margin-top: 120px;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            padding: 100px 8%;
+            border-radius: 60px;
+            text-align: center;
+        }
+
+        .gift-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .gift-sub {
+            opacity: 0.85;
+            margin-bottom: 60px;
+        }
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+
+        .gift-card {
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .gift-inner {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            transform-style: preserve-3d;
+            transition: transform 0.9s ease;
+            border-radius: 30px;
+        }
+
+        .gift-card.open .gift-inner {
+            transform: rotateY(180deg);
+        }
+
+        .gift-front,
+        .gift-back {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gift-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gift-front span {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 30px;
+        }
+
+        .gift-back {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            transform: rotateY(180deg);
+            padding: 30px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* ================= LOVE NOTE ================= */
+        .love-note {
+            margin-top: 120px;
+            padding: 100px 10%;
+            border-radius: 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-note::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.6), transparent 60%),
+                radial-gradient(circle at bottom right, rgba(255, 192, 203, 0.4), transparent 60%);
+            pointer-events: none;
+        }
+
+        .love-note h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .love-note textarea {
+            width: 100%;
+            max-width: 900px;
+            height: 220px;
+            padding: 30px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            resize: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #444;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(15px);
+            box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.08),
+                0 20px 40px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s ease;
+        }
+
+        .love-note textarea::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+
+        .love-note textarea:focus {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: inset 0 12px 35px rgba(0, 0, 0, 0.1),
+                0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .note-hint {
+            margin-top: 25px;
+            font-size: 1rem;
+            opacity: 0.75;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+
+        <h1>Ankita ✨</h1>
+        <h1>Madam jii 🤌🎀</h1>
+        <p>"Some people make the world brighter just by being in it."</P>
+        <p>A story of friendship, grace & unforgettable moments</p>
+        <div class="highlight-date">✨ 17 • DEC • 2025 ✨</div>
+    </header>
+
+    <section class="friends">
+        <h2>Friends & Moments</h2>
+        <div class="friend-cards">
+            <div class="friend">
+                <h3>Best Friend</h3>
+                <p>The constant, the secret keeper, the forever person.</p>
+            </div>
+            <div class="friend">
+                <h3>College Memories</h3>
+                <p>Where friendships turned into family.</p>
+            </div>
+            <div class="friend">
+                <h3>Life Partners</h3>
+                <p>Through every high and low, always together.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="gallery">
+            <div class="card"><img src="gallary/IMG-20251202-WA0006.jpg" alt="Ankita"><span>Pure
+                    Sunshine</span></div>
+            <div class="card">
+                <img src="gallary/IMG-20251202-WA0016.jpg" alt="Ankita"><span>Soft &
+                    Strong</span>
+            </div>
+            <div class="card"><img src="gallary/IMG-20251215-WA0008.jpg" alt="Ankita"><span>Grace in
+                    Motion</span>
+            </div>
+            <div class="card"><img src="gallary/IMG-20251215-WA0013.jpg" alt="Ankita"><span>Timeless
+                    Beauty</span>
+            </div>
+            <div class="card"><img src="gallary/IMG-20251215-WA0023.jpg" alt="Ankita"><span>Golden
+                    Moments</span>
+            </div>
+            <div class="card"><img src="gallary/Snapchat-638350587.jpg" alt="Ankita"><span>Effortless
+                    Charm</span>
+            </div>
+            <div class="card"><img src="gallary/IMG-20251215-WA0014.jpg" alt="Ankita"><span>Playful
+                    Vibes</span></div>
+            <div class="card"><img src="gallary/Screenshot_20251215_115105_XRecorder.png" alt="Ankita"><span>Unfiltered
+                    You</span></div>
+        </div>
+    </section>
+
+    <section class="videos">
+        <h2>Moments in Motion 🎥</h2>
+        <div style="text-align: center;" class="video-grid ">
+            <div class="video-box ">
+                <!-- Replace source with your video -->
+                <video controls src="gallary/WhatsApp Video 2026-01-15 at 10.26.05 PM.mp4"></video>
+                <span>My Madam ji 🎀</span>
+            </div>
+            <div class="video-box">
+                <!-- Or use YouTube embed -->
+                <video controls src="gallary/VN20251215_131439.mp4"></video>
+                <span>I Nerver want to loss you </span>
+
+
+            </div>
+            <div class="video-box">
+                <video controls src="gallary/WhatsApp Video 2026-01-15 at 10.26.37 PM.mp4"></video>
+                <span>I can't tell you something</span>
+
+            </div>
+            <div class="video-box">
+                <video controls src="gallary/VID-20251215-WA0021.mp4"></video>
+                <span>I follow Your all oders</span>
+
+            </div>
+            <div class="video-box">
+                <video controls src="gallary/WhatsApp Video 2026-01-15 at 10.26.32 PM.mp4"></video>
+                <span>gadi pe phone bhi ni chalao ga </span>
+
+            </div>
+            <div class="video-box">
+                <video controls src="gallary/WhatsApp Video 2026-01-16 at 9.52.49 PM.mp4"></video>
+                <span>per...The connetion which i feel </span>
+
+            </div>
+            <div class="video-box">
+                <video controls src="gallary/WhatsApp Video 2026-01-16 at 10.37.43 PM.mp4"></video>
+                <span>is diffrent </span>
+
+            </div>
+            <div class="video-box">
+                <video controls src="gallary/WhatsApp Video 2026-01-16 at 10.41.45 PM.mp4"></video>
+                <span>I am not going in any condition ..</span>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes-section">
+        <h2>Words That Feel Like Home</h2>
+        <div class="quotes">
+            <div class="quote-box">"Some people become memories. Some become forever."</div>
+            <div class="quote-box">"Friendship is the soul's favorite place."</div>
+            <div class="quote-box">"She makes life softer and stronger at the same time."</div>
+            <div class="quote-box">"17-12-2025 — a moment sealed in hearts."</div>
+        </div>
+    </section>
+    <section class="gift-section reveal">
+        <h2>🎁 Exciting Gift Reveal</h2>
+        <p class="gift-sub">Because 17 • DEC • 2025 deserves surprises 💖</p>
+
+        <div class="gift-grid">
+            <div class="gift-card" onclick="revealGift(this)">
+                <div class="gift-inner">
+                    <div class="gift-front">
+                        <img src="gallary/IMG-20251215-WA0023.jpg">
+                        <span>Click to Open 🎀</span>
+                    </div>
+                    <div class="gift-back">
+                        i win if you laugh daily.....,
+                        i win if your life don't goes to into dark ,
+                        i win if you can't overthink about any thing ,
+                        i win if you enjoy your life better as possible you can ......✨
+                    </div>
+                </div>
+            </div>
+
+            <div class="gift-card" onclick="revealGift(this)">
+                <div class="gift-inner">
+                    <div class="gift-front">
+                        <img src="gallary/IMG-20251215-WA0014.jpg">
+                        <span>Tap Me 💝</span>
+                    </div>
+                    <div class="gift-back">
+                        <span>
+                            But you Know Whats my Best victory ..?
+
+
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="gift-card" onclick="revealGift(this)">
+                <div class="gift-inner">
+                    <div class="gift-front">
+                        <img src="gallary/XRecorder_20251025_02(4).jpg">
+                        <span>Surprise 🎊</span>
+                    </div>
+                    <div class="gift-back">
+                        <span>
+                            <p>Having You.....</p>
+                            <p>App bohot Khass ho.... Chahee 10 din 15 din mahineee..kitne bhi din baat na ho contect na
+                                ho mera kabhi maan ni hota ki kisi or se baat karu... Halaki woh baat alag kai ki koi
+                                muh he nhi lagata ..😂</p>
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="love-note reveal">
+        <h2>💌 A Note From the Heart</h2>
+
+        <textarea placeholder="Write something eternal here...
+A feeling. A promise. A memory.
+Something only you & Ankita will understand 🤍">
+Anku... Ankita... Maadam ji... ye sab Aap pe perfect hai aaj mene aap se bohot bohot baatein ki muje sch mai bohot bohot aacha lagta hai jab aap apne life se jude kisse mujhse share karte ho... mujhse baat karte ho. Aap ko pta hai muje aap bohot pasand ho... pasand ho sch mai per ye baat mai kabhi bhi aap ko bta nhi skta or ye sahi bhi nahi rahe ga... per aap ko jo dar hai ki mai aap ko attachement karwa ke chala jao ga ya esha kuch to sch btao to addEventListener mai kabhi nahi jao ga,mere side se jane ki baat ho skti hai per mai eese attachement hote huve kabhi bhi nhi jao ga. Mere liye aap ek dost se bohot jiyada ho. Mai sayad apni
+friendship bhi relationship ki tarha or us se bhi jyada behtar nibhao ga but sirf meri side se. dekho muje aap ki side se bikul kuch bhi nahi chahiye kuch bhi nahi muje bikul bhi expection nahi hai ki aap bhi kuch jiyada feel karo wagera kuch bhi nahi.
+
+Meri puri life mai aap ke jesa koi nahi aaya or na aaye ga... per mai aap ke liye woh nahi hu jo aap ko chahiye or na he mai woh ban na chahta hu. Sch mai, ulta mai gabra jao ga ager aap ko kuch feel hua to. Even mai khud nahi chahta ki aap ko mujse eesa kuch ho but trust me... Mai aap ko hurt karke bilkul nahi jao ga Mai chala bhi gaya na to bhi aap ko us time kuch jiyada fark nahi pade ga or muje pata hai log mere sath nahi rehte to meri expection humesa 0% he rahe gi Mere jane ka bhi reason hoga. Or mai eese nahi jane wala achanak ya eesa. Mai jab bhi jao ga aap ko bilkul bhi pta nahi chale ga hurt nahi hoga kuch feel nahi hoga. Aap ko bhi bakiyo ke jese bilkul  bhi yaad nahi rahe ga ki hemant jesa koi tha bhi aap ki life mai Mai ya to sacrifice ke chakar mai jao ga ya kuch or but sch btao to mai nhi aap chale jao ge or ye sch hai Aap se mai attach hu.
+ek baat batao ...
+mai na Aap ki khamosi bhi Pure din sun sakta hu Bina kuch bole...
+​Mai Nahi jao ga kahi bas yahi bolna hai muje aap ko meri kisi cheez se fark nahi pade ga or ye bhi muje pta hai. Abhi likhna chahu to pure din likh sakta hu mai bohot kuch per chordo..
+
+I hope you link this way of giving latter .Or sayad aap ko kuch baatein buri lag skti hai i don't know but sorry ..aap ne kaha tha ki aap mai koi telent ni hai wagera..Appko pta hai aap ka telent kya hai..? 
+
+being Loyal.. 
+honesty ..
+The way you treat the people.. 
+kisi ke liye sochna bhi bohot kuch btata hai ..and you..🤌🎀
+i can't tell more about you warna to page he kaam pade ga..
+
+
+
+</textarea>
+
+        <p class="note-hint">These words don’t need perfection — only honesty ✨</p>
+    </section>
+
+
+
+    <footer>
+        Made with ❤️ for <span>Ankita</span> | A timeless friendship ✨
+    </footer>
+
+</body>
+
+
+<script>
+    /* Gift flip */
+    function revealGift(card) {
+        card.classList.toggle("open");
+        confetti();
+    }
+
+    /* Scroll reveal */
+    const reveals = document.querySelectorAll(".reveal");
+
+    window.addEventListener("scroll", () => {
+        reveals.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                el.classList.add("active");
+            }
+        });
+    });
+
+    /* Simple confetti */
+    function confetti() {
+        for (let i = 0; i < 25; i++) {
+            const c = document.createElement("div");
+            c.style.position = "fixed";
+            c.style.width = "8px";
+            c.style.height = "8px";
+            c.style.background = `hsl(${Math.random() * 360},100%,70%)`;
+            c.style.left = Math.random() * window.innerWidth + "px";
+            c.style.top = "-10px";
+            c.style.borderRadius = "50%";
+            c.style.zIndex = 9999;
+            document.body.appendChild(c);
+
+            let fall = c.animate([
+                { transform: "translateY(0)" },
+                { transform: `translateY(${window.innerHeight}px)` }
+            ], { duration: 1500 + Math.random() * 1000 });
+
+            fall.onfinish = () => c.remove();
+        }
+    }
+</script>
+
+</html>
