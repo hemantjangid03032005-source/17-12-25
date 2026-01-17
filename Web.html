@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+
+<body class="max-w-[1440px] mx-auto p-3 md:p-0 ">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <div class="flex items-center space-x-6">
+            <img src="Images/logo.png" alt="Company Logo" class="h-10 w-auto">
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#about" class="hover:text-blue-500">About Us</a></li>
+                <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+                <li><a href="#pricing" class="hover:text-blue-500">Pricing</a></li>
+                <li><a href="#blog" class="hover:text-blue-500">Blog</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+            <div class="text-right">
+                <p class="text-sm text-gray-500">Call us on</p>
+                <h3>
+                    <a href="tel:02039605080" class="font-semibold text-blue-400 ">
+                        020 3960 5080
+                    </a>
+                </h3>
+            </div>
+            <div class="flex space-x-2">
+                <button class="bg-green-500 h-10 text-white px-4 py-2 rounded-lg hover:bg-green-300">
+                    Get Started
+                </button>
+                <button class="px-4 py-2 shadow-lg h-10 rounded-lg hover:bg-gray-100">
+                    Login
+                </button>
+            </div>
+        </div>
+        <button id="menu-btn" class="md:hidden text-2xl text-gray-700">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </nav>
+
+    <div id="mobile-menu" class="hidden  flex flex-col items-center space-y-4 py-4 bg-gray-100 md:hidden">
+        <a href="#about" class="hover:text-blue-500">About Us</a>
+        <a href="#services" class="hover:text-blue-500">Services</a>
+        <a href="#pricing" class="hover:text-blue-500">Pricing</a>
+        <a href="#blog" class="hover:text-blue-500">Blog</a>
+        <a href="#contact" class="hover:text-blue-500">Contact</a>
+        <a href="tel:02039605080" class="font-semibold text-blue-400">020 3960 5080</a>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+            Get Started
+        </button>
+        <button class="px-4 py-2 border border-blue-300 rounded-lg hover:bg-gray-200">
+            Login
+        </button>
+    </div>
+
+    <section class="w-full mx-auto text-center relative">
+        <img src="Images/Header.png" alt="Referral Program Banner" class="hidden md:flex w-full h-auto mb-8">
+        <div class="md:w-1/3 md:absolute top-3 left-64 text-start">
+            <h2 class="text-xl md:text-4xl font-samibold text-blue-800">
+                We are offering <span class="text-green-500">£100</span> to you on every referred client
+            </h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                Love the Online Account Filing experience? Share it with your friends and contacts.
+            </p>
+            <button
+                class="mt-6 inline-block bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+                Refer Now
+            </button>
+        </div>
+
+    </section>
+    <section class=" max-w-6xl  mx-auto py-10 ">
+        <div class="  flex flex-col gap-4 mb-7">
+            <p>DO you know a business or organisation which would benefit from using Online Account Filing services? If
+                yes, why not let us know and, as a gestureof thanks, <span class="text-blue-500">you'll both get
+                    €50</span> if they sign up as a client.
+            </p>
+
+            <p>
+                The part is that our referral incentive is uncapped. so that you can recommend as many as you wish, each
+                time, earning <samp class="text-blue-500">&euro;50</samp> for yourself as well as the one you refer
+                <span class="font-bold">(total benefit &euro;50 + &euro;50 =&euro;100)</span> The process iS very
+                simple, you just need to
+                complete the short form Exylow and we'll do the rest.
+            </p>
+            <h3 class="text-blue-500">Terms and Conditions</h3>
+        </div>
+        <div class="max-w-6xl mx-auto grid md:flex md:justify-evenly justify-center gap-6 text-center md:px-4">
+            <div class="p-6 w-72 bg-gray-100 shadow rounded-md">
+                <img class="w-10 mx-auto mb-4" src="Images/Quick and Easy.png" alt="Quick and Easy icon">
+                <p class="text-gray-600">Quick and easy hassle-free process</p>
+            </div>
+            <div class="p-6 w-72 bg-gray-100 shadow rounded-md">
+                <img class="w-10 mx-auto mb-4" src="Images/OAF.png" alt="OAF notification icon">
+                <p class="text-gray-600">OAF will keep you notified of your recommendations</p>
+            </div>
+            <div class="p-6 w-72 bg-gray-100 shadow rounded-md">
+                <img class="w-20 mx-auto mb-4" src="Images/Referred clients.png" alt="Referral reward icon">
+                <p class="text-gray-600">£50 for you as well as the referred client</p>
+            </div>
+        </div>
+    </section>
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-2xl mx-auto bg-gray-50 border-blue-300 border shadow-md rounded-lg text-center">
+            <h2 class="text-blue-950 text-2xl font-bold mb-8">Refer a Client</h2>
+            <form class="p-8 space-y-6">
+                <div class=" space-y-4 text-left">
+                    <h3 class="text-blue-950 text-lg font-semibold">Your Details</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <input type="text" placeholder="Your Name"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Your Company"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <input type="email" placeholder="Your Email"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Your Contact Number"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 text-left">
+                    <h3 class="text-blue-950 text-lg font-semibold">Referral Details</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <input type="text" placeholder="Referral Name"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Referral Company"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <input type="email" placeholder="Referral Email"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Referral Contact Number"
+                                class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full">
+                        </div>
+                    </div>
+                    <div>
+                        <textarea placeholder="Notes"
+                            class="border outline-blue-400 border-blue-300 rounded-lg p-3 w-full"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-sm text-gray-500">
+                    <a href="#" class=" hover:text-gray-700">View our privacy notice <samp
+                            class="text-blue-500">here</samp></a>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                    Submit Your Referral
+                </button>
+            </form>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto text-center px-4">
+            <h2 class="text-blue-950 text-2xl font-semibold mb-4">Still not sure? Do read our wonderful client reviews
+            </h2>
+            <p class="text-gray-500 mb-8">See our <strong>194 excellent</strong> <img class="inline"
+                    src="Images/Trust Pilot stars.png" alt=""> 5.0 out of 5.0 based on 147
+                reviews on <img class="inline" src="Images/Trustpilot logo.png" alt=""> </p>
+            <div class="grid md:flex  md:justify-evenly gap-6  text-start">
+
+                <div class="p-8 md:w-1/3 rounded-lg shadow-lg bg-gray-50 space-y-3">
+                    <div class="space-y-2">
+                        <img src="Images/Golden stars.png" alt="Golden stars">
+
+                        <h4 class="font-semibold flex gap-2 items-center"><img class="h-4" src="Images/Men icon.png"
+                                alt=""> Mark Turner</h4>
+                    </div>
+
+                    <h2 class="text-blue-950 font-semibold text-2xl mb-3">A very satisfied customer.</h2>
+                    <p class="text-gray-700">Hovlng many and having dealt with many accountants,I found Online Account
+                        Filing refreshingly straightforward and efficient.</p>
+
+                </div>
+
+                <div class="p-8 md:w-1/3  rounded-lg  shadow-lg bg-gray-50 space-y-3">
+                    <div class=" space-y-2 ">
+                        <img src="Images/Golden stars.png" alt="Golden stars">
+
+                        <h4 class="font-semibold flex gap-2 items-center"><img class="h-4" src="Images/Men icon.png"
+                                alt=""> Katie</h4>
+                    </div>
+                    <h2 class="text-blue-950 font-semibold text-2xl mb-3">Excellent </h2>
+                    <p class="text-gray-700">l've had an excellent experience with Online Account filing. Everyon I've
+                        dealt with has been incredibly helpful and friendly. Our accounts were prepared very quickly...
+                    </p>
+                </div>
+
+                <div class="p-8 md:w-1/3  rounded-lg  shadow-lg bg-gray-50 space-y-3">
+                    <div class=" space-y-2 ">
+                        <img src="Images/Golden stars.png" alt="Golden stars">
+                        <h4 class="font-semibold flex gap-2 items-center"><img class="h-4" src="Images/Men icon.png"
+                                alt=""> Mike James</h4>
+                    </div>
+                    <h2 class="text-blue-950 font-semibold text-2xl mb-3">Excellent service & value </h2>
+                    <p class="text-gray-700">Excellent service - fast efficient and friendly - and very good value. I
+                        have a 'micro-entity' business, and I kept putting off finalising my accounts until I spotted
+                        this company online and read the reviews.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=" py-16">
+        <div class="max-w-7xl mx-auto grid md:flex content-center items-center justify-between px-6 mb-12">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <img src="Images/Online Account Services.png" alt="Online Accounting Dashboard Illustration"
+                    class="w-4/5 mx-auto">
+            </div>
+
+            <div class="md:w-1/2 text-center md:text-left md:pl-12">
+                <h2 class="text-3xl font-bold mb-6 text-blue-950">Online Accounting Services</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    We offer a host of accounting and taxation-related services for Limited Companies and Sole Traders.
+                    This makes us a one-stop shop for all your company as well as personal tax-related compliance
+                    matters.
+                </p>
+                <button
+                    class="inline-block mt-6 bg-green-400 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors duration-300">
+                    Get Started
+                </button>
+            </div>
+        </div>
+
+        <div class="max-w-6xl grid  md:flex md:justify-evenly gap-10 mx-auto px-6">
+
+
+            <div class="space-y-4">
+                <h3 class="font-semibold text-xl text-blue-700">Limited Company</h3>
+                <img src="Images/Limited Comapny.png" alt="Limited Company" class="w-full max-w-md mx-auto">
+                <ul class="text-gray-600 space-y-2 list-none list-inside">
+                    <li>Company accounts & tax return (CT600)</li>
+                    <li>Confirmation statement & secretarial services</li>
+                    <li>Bookkeeping and VAT (including MTD)</li>
+                    <li>Payroll</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h3 class="font-semibold text-xl text-green-600">Sole Trader</h3>
+                <img src="Images/Sole Trader.png" alt="Sole Trader" class="w-full max-w-md mx-auto">
+                <ul class="text-gray-600 space-y-2 list-none list-inside">
+                    <li>Self-assessment tax return (SA100)</li>
+                    <li>Bookkeeping and VAT (including MTD)</li>
+                    <li>Payroll</li>
+                    <li>Tax planning advice</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-blue-950 text-3xl font-bold mb-2">Case Studies</h2>
+            <p class="text-gray-600 mb-10">Accounting and taxation-related services</p>
+            <div class="md:flex grid gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-left space-y-4 ">
+                    <img src="Images/Renew logo.jpg" alt="Renew logo" class="w-24">
+                    <p class="text-gray-700">
+                        Our team of Partner Consultants is made up of accountants and implementers who understand how
+                        OAF works in practice.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-300 rounded-full"></div>
+                        <div class="text-sm text-gray-500">
+                            <h3 class="font-bold text-gray-800">Johnson Walker</h3>
+                            <p>Director, Renew Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-left space-y-4  ">
+                    <img src="Images/Digital Logo.jpg" alt="Digitalu logo" class="w-24">
+                    <p class="text-gray-700">
+                        Our team of Partner Consultants is made up of accountants and implementers who understand how
+                        OAF works in practice.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-300 rounded-full"></div>
+                        <div class="text-sm text-gray-500">
+                            <h3 class="font-bold text-gray-800">Lauren York</h3>
+                            <p>Director, Digitalu Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-left space-y-4  ">
+                    <img src="Images/True age logo.jpg" alt="TrueAge logo" class="w-24">
+                    <p class="text-gray-700">
+                        Our team of Partner Consultants is made up of accountants and implementers who understand how
+                        OAF works in practice.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-300 rounded-full"></div>
+                        <div class="text-sm text-gray-500">
+                            <h3 class="font-bold text-gray-800">Hammond W. Jim</h3>
+                            <p>Director, TrueAge</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto text-center px-4">
+            <h2 class="text-blue-950 md:text-3xl text-2xl font-bold mb-4">OAF Blogging World!</h2>
+            <p class="text-gray-600 mb-10">Accounting and taxation related services</p>
+            <div class="grid md:flex gap-8">
+                <div class=" p-6 rounded-lg shadow-[0_2px_2px_-1px_rgba(0,0,0,0.1)] text-left">
+                    <img src="Images/Payments onAccounts.png" alt="Payments on Account illustration"
+                        class="w-full h-40 object-contain mb-4">
+                    <h2 class="text-sm font-semibold text-green-500 uppercase">Payments on Accounts</h2>
+                    <h3 class="text-blue-950 text-lg font-bold mt-2 mb-2">How to Make Payments on Account</h3>
+                    <p class="text-gray-700 text-sm">Had enough of the weather in the UK this summer, heading off
+                        somewhere warm and sunny for holiday? You are set and ready to go? Or are you?</p>
+                </div>
+
+                <div class=" p-6 rounded-lg shadow-[0_2px_2px_-1px_rgba(0,0,0,0.1)] text-left">
+                    <img src="Images/MTD for VAT.png" alt="MTD for VAT illustration"
+                        class="w-full h-40 object-contain mb-4">
+                    <h2 class="text-sm font-semibold text-green-500 uppercase">MTD for VAT</h2>
+                    <h3 class="text-blue-950 text-lg font-bold mt-2 mb-2">Digital Revolution: MTD for VAT</h3>
+                    <p class="text-gray-700 text-sm">A recent survey conducted by Quickbooks points out that over 50% of
+                        small businesses fall into mistake thinking they're MTD compliant companies.</p>
+                </div>
+
+                <div class=" p-6 rounded-lg shadow-[0_2px_2px_-1px_rgba(0,0,0,0.1)] text-left">
+                    <img src="Images/Capital Allowance.png" alt="Capital Allowance illustration"
+                        class="w-full h-40 object-contain mb-4">
+                    <h2 class="text-sm font-semibold text-green-500 uppercase">Capital Allowance</h2>
+                    <h3 class="text-blue-950 text-lg font-bold mt-2 mb-2">How to Make Payments on Account</h3>
+                    <p class="text-gray-700 text-sm">
+                        Capital Allowance can easily be confused with a type of expense, eligible to be deducted by an
+                        organisation in return for the taxable profits.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="bg-blue-50 py-12">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-4 text-center md:text-left">
+            <h2 class="text-xl font-semibold text-blue-700 mb-4 md:mb-0">
+                We offer services which perfectly suit your needs.
+            </h2>
+            <div class="md:flex grid gap-4 md:mx-0 mx-auto">
+                <button class="bg-green-400  text-white px-6 py-3   rounded-lg hover:bg-green-700 transition">
+                    Custom Quote
+                </button>
+                <button
+                    class="border border-blue-600 hover:border-2 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
+                    Request a Callback
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer class=" text-gray-700 py-12">
+        <div class="max-w-7xl mx-auto px-6 md:flex md:justify-between md:text-start text-center  grid gap-5">
+
+            <div class="flex md:justify-normal justify-center">
+                <img src="Images/logo.png" alt="Company Logo" class="w-12 h-12">
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-800">Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-blue-600">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-600">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Pricing</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Blog</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-800">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-blue-600">Limited Company</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Sole Traders</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Contractors</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-800">Contact</h4>
+                <p class="text-sm mb-2">
+                    Suite E, 4-4A Ridgwaygate<br>London EC2A 4AH
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-4 text-gray-800">Follow</h4>
+                <ul class="space-y-2 grid md:justify-normal justify-center  text-sm">
+                    <li class="flex items-center gap-3">
+                        <img src="Images/Facebook Icon.png" alt="Facebook" class="w-5">
+                        <a href="#" class="hover:text-blue-600">Facebook</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="Images/Twitter Icon.png" alt="Twitter" class="w-5">
+                        <a href="#" class="hover:text-blue-600">Twitter</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="Images/G + Icon.png" alt="Google" class="w-5">
+                        <a href="#" class="hover:text-blue-600">Google Plus</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-3 text-sm">
+                <button class="bg-green-400 text-white px-6 py-2.5 rounded-md hover:bg-green-600 transition">
+                    Say Hello!
+                </button>
+                <p class="text-2xl font-semibold text-blue-600 hover:underline">020 3690 5800</p>
+                <p>or Request a Callback</p>
+                <p class="text-xs text-gray-600">Mon - Fri: 9:30am - 5:00pm</p>
+                <p class="text-sm text-blue-600 hover:underline">info@onlineaccountfiling.com</p>
+            </div>
+
+        </div>
+        <div
+            class="border-t mt-10 pt-6 text-center lg:text-left text-xs text-gray-500 px-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+            <div class="max-w-3xl">
+                <p>
+                    Online Account Filing Limited trading as Online Account Filing registered in England & Wales under
+                    company registration number 11222597
+                </p>
+                <p class="mt-2">© 2019 Online Account Filing - All Rights Reserved</p>
+            </div>
+            <div>
+                <p class="hover:text-blue-600 cursor-pointer">Terms | Policy | Cookie Privacy</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+</html>
